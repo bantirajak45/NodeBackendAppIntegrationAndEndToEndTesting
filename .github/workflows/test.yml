@@ -25,6 +25,9 @@ jobs:
       - name: Ensure Docker Compose is available
         run: docker compose version
 
+      - name: Fix wait-for-it.sh permissions
+        run: chmod +x ./IntegrationTesting/scripts/wait-for-it.sh
+
       - name: Copy .env.example to .env
         run: cp ./IntegrationTesting/.env.example ./IntegrationTesting/.env
 
